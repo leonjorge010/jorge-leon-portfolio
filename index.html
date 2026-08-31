@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Jorge Leon — electrical and computer engineering student at California Baptist University, focused on embedded systems and software."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="index.html" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="photos.html">Photos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page">
+      <section class="hero" id="work">
+        <button
+          type="button"
+          class="avatar-button"
+          aria-haspopup="dialog"
+          aria-controls="avatar-lightbox"
+          aria-label="View larger photo of Jorge Leon"
+        >
+          <img
+            class="avatar"
+            src="assets/avatar.jpg"
+            alt="Jorge Leon"
+            width="112"
+            height="112"
+          />
+        </button>
+        <h1 class="hero-title">
+          I'm Jorge Leon — an electrical and computer engineering student.
+        </h1>
+        <p class="hero-bio">
+          I'm an electrical and computer engineering student at California
+          Baptist University, focused on embedded systems and software. I'm
+          currently looking for internships where I can build real
+          hardware–software products and grow as an engineer.
+        </p>
+        <!-- Drop your PDF at assets/resume.pdf to activate this button -->
+        <p class="hero-actions">
+          <a class="resume-button" href="assets/resume.pdf">View resume</a>
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="creating-label">
+        <p id="creating-label" class="section-label">Creating</p>
+        <ul class="link-list">
+          <li>
+            <a class="link-item" href="projects/totem-air.html">
+              <span class="link-title"
+                >Totem-Air <span aria-hidden="true">→</span></span
+              >
+              <span class="link-desc"
+                >Custom drone Remote ID monitoring system — passively captures
+                and decodes broadcasts, tags them with position and time, and
+                shows them on a live operations dashboard.</span
+              >
+            </a>
+          </li>
+          <li>
+            <a class="link-item" href="projects/air-purifier-monitor.html">
+              <span class="link-title"
+                >Air Purifier Monitor <span aria-hidden="true">→</span></span
+              >
+              <span class="link-desc"
+                >DIY air purifier and air quality monitor on Arduino with a
+                round touchscreen, PM2.5 and temperature/humidity sensors, and
+                automatic fan speed control.</span
+              >
+            </a>
+          </li>
+          <li>
+            <a class="link-item" href="projects/air-quality-monitor-pcb.html">
+              <span class="link-title"
+                >Air Quality Monitor PCB <span aria-hidden="true">→</span></span
+              >
+              <span class="link-desc"
+                >Custom Arduino Uno shield for an air quality monitor and
+                purifier — sensors, touchscreen, buck converter, and MOSFET fan
+                driver on a compact through-hole board.</span
+              >
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="experience-label">
+        <p id="experience-label" class="section-label">Experience</p>
+        <ul class="link-list">
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >Software Engineering Intern - Ontrack Technology Group</span
+              >
+              <span class="link-desc"
+                >May–Aug 2025 — Real-time operations dispatch platform for
+                large events; Angular dashboards, PostgreSQL, and WebSockets
+                that helped cut average response times by 21%.</span
+              >
+            </div>
+          </li>
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >Electronics Subsystem - CalBaptist Racing (Formula SAE EV)</span
+              >
+              <span class="link-desc"
+                >Sep 2023–May 2024 — PCB design in Altium, wiring harnesses, and
+                vehicle electrical assembly for the Formula SAE EV team.</span
+              >
+            </div>
+          </li>
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title">Logistics Analyst - FedEx Freight</span>
+              <span class="link-desc"
+                >Feb 2025–Present — Analyze transportation data and logistics
+                metrics to improve freight routing and find cost-reduction
+                opportunities.</span
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="education-label">
+        <p id="education-label" class="section-label">Education</p>
+        <ul class="link-list">
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >B.S. Electrical and Computer Engineering - California Baptist
+                University</span
+              >
+              <span class="link-desc"
+                >Software Engineering minor - ABET accredited - Expected May
+                2027 - Riverside, CA</span
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!--
+        Posts are loaded from posts.json.
+        To add a post:
+          1. Put an image in assets/posts/ (jpg, png, or svg)
+          2. Add a new object at the top of posts.json with title, teaser, url, image
+      -->
+      <section class="section" id="posts" aria-labelledby="posts-label">
+        <p id="posts-label" class="section-label">Posts</p>
+        <ul class="post-list" id="post-list">
+          <li class="post-list-status muted">Loading posts…</li>
+        </ul>
+      </section>
+
+      <footer class="site-footer" id="contact">
+        <ul class="social-list">
+          <li>
+            <a
+              class="social-pill"
+              href="https://github.com/leonjorge010"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              class="social-pill"
+              href="https://www.linkedin.com/in/jorge-leon-duran/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              class="social-pill"
+              href="mailto:leonjorge010@gmail.com"
+              aria-label="Email"
+              >Email</a
+            >
+          </li>
+        </ul>
+      </footer>
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+
+    <dialog class="lightbox" id="avatar-lightbox" aria-label="Photo of Jorge Leon">
+      <button type="button" class="lightbox-close" aria-label="Close photo">
+        <span aria-hidden="true">×</span>
+      </button>
+      <img
+        class="lightbox-image"
+        src="assets/avatar.jpg"
+        alt="Jorge Leon"
+        width="720"
+        height="720"
+      />
+    </dialog>
+
+    <script>
+      const lightbox = document.getElementById("avatar-lightbox");
+      const openButton = document.querySelector(".avatar-button");
+      const closeButton = lightbox?.querySelector(".lightbox-close");
+
+      openButton?.addEventListener("click", () => {
+        lightbox.showModal();
+      });
+
+      closeButton?.addEventListener("click", () => {
+        lightbox.close();
+      });
+
+      lightbox?.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          lightbox.close();
+        }
+      });
+
+      async function renderPosts() {
+        const list = document.getElementById("post-list");
+        if (!list) return;
+
+        try {
+          const response = await fetch("posts.json", { cache: "no-store" });
+          if (!response.ok) throw new Error("Could not load posts.json");
+
+          const posts = await response.json();
+          list.innerHTML = "";
+
+          if (!Array.isArray(posts) || posts.length === 0) {
+            list.innerHTML =
+              '<li class="post-list-status muted">No posts yet.</li>';
+            return;
+          }
+
+          for (const post of posts) {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.className = "post-item";
+            link.href = post.url || "#";
+
+            if (post.url && post.url.startsWith("http")) {
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+            }
+
+            const image = document.createElement("img");
+            image.className = "post-thumb";
+            image.src = post.image || "assets/posts/example.svg";
+            image.alt = "";
+            image.width = 48;
+            image.height = 48;
+
+            const copy = document.createElement("span");
+            copy.className = "post-copy";
+            copy.innerHTML = `
+              <span class="link-title">${escapeHtml(post.title || "Untitled")} <span aria-hidden="true">→</span></span>
+              <span class="link-desc">${escapeHtml(post.teaser || "")}</span>
+            `;
+
+            link.append(image, copy);
+            item.append(link);
+            list.append(item);
+          }
+        } catch (error) {
+          list.innerHTML =
+            '<li class="post-list-status muted">Could not load posts. Check posts.json.</li>';
+          console.error(error);
+        }
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
+
+      renderPosts();
+    </script>
+  </body>
+</html>

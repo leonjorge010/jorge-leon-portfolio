@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Air Quality Monitor PCB — a custom Arduino Uno shield by Jorge Leon."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="../index.html" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../photos.html">Photos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page page--project">
+      <p class="project-back">
+        <a class="text-link" href="../index.html#creating-label"
+          >← Back to Creating</a
+        >
+      </p>
+
+      <header class="project-header">
+        <h1 class="project-title">Air Quality Monitor PCB</h1>
+      </header>
+
+      <section class="section" aria-labelledby="overview-label">
+        <p id="overview-label" class="section-label">Overview</p>
+        <div class="project-prose">
+          <p>
+            A custom Arduino Uno shield for an air quality monitor and purifier
+            — sensors, touchscreen, power conversion, and MOSFET fan drive on a
+            compact through-hole board.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="problem-label">
+        <p id="problem-label" class="section-label">The problem</p>
+        <div class="project-prose">
+          <p>
+            The air quality monitor worked on the bench, but jumper wires were
+            a liability inside a sealed enclosure. I needed a custom shield that
+            could host the sensors, display, and fan drive cleanly — and solve
+            the power limits of running everything off the Uno’s onboard
+            regulator.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="built-label">
+        <p id="built-label" class="section-label">What I built</p>
+        <div class="project-prose">
+          <p>
+            Designed for Professor Paulsen’s Microcontroller System Design
+            class, this shield brings the air quality monitor into a clean,
+            enclosure-ready form. A PMS5003 reads PM2.5, an SGP30 tracks VOCs
+            and eCO₂, an SHT31-D handles temperature and humidity, a round
+            GC9A01A touchscreen shows the UI, and a 12V fan ramps up when air
+            quality degrades.
+          </p>
+          <p>
+            The layout maximizes the Uno’s available I/O across SPI, I2C, and
+            UART. A single 12V barrel-jack input splits on-board: one branch
+            powers the fan directly, the other feeds an MP1584 buck converter
+            that steps down to 5V for the Arduino. A MOSFET stage drives the
+            fan. The board was designed with through-hole parts from the lab so
+            it could be built without waiting on specialty SMD stock, and sent
+            to JLCPCB for fabrication.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="challenges-label">
+        <p id="challenges-label" class="section-label">Challenges</p>
+        <div class="project-prose">
+          <p>
+            The combined current draw of the display, sensors, and logic
+            exceeded the Uno’s onboard regulator, so the power architecture had
+            to change from a simple dual-rail idea to a single 12V input with
+            on-board buck conversion. At 2.7″ × 2.1″, fitting four sensor
+            connectors, the buck converter, the MOSFET driver, and supporting
+            passives took several placement passes — including putting the
+            MP1584 on the underside so it sits between the shield and the Uno.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="state-label">
+        <p id="state-label" class="section-label">Current state</p>
+        <div class="project-prose">
+          <p>
+            The shield replaces loose jumper wires with a reliable interconnect
+            for a sealed enclosure (designed with project partner Manuel
+            Alcaraz). Boards went to JLCPCB with the software already complete,
+            ready for final assembly and testing. The project also applied PCB
+            skills from Dr. Butler’s design class to a full microcontroller
+            system, not just a schematic exercise.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="gallery-label">
+        <p id="gallery-label" class="section-label">Photos</p>
+        <div class="project-gallery">
+          <div class="project-gallery-slot">
+            <span>PCB layout / render</span>
+          </div>
+          <div class="project-gallery-slot">
+            <span>Fabricated board</span>
+          </div>
+          <div class="project-gallery-slot">
+            <span>Shield on Uno</span>
+          </div>
+        </div>
+        <p class="hero-bio project-gallery-note">
+          Drop images into
+          <code>assets/projects/air-quality-monitor-pcb/</code> and replace
+          these slots when you’re ready.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="links-label">
+        <p id="links-label" class="section-label">Links</p>
+        <ul class="social-list">
+          <li>
+            <a
+              class="social-pill"
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7446999117949485056/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn write-up</a
+            >
+          </li>
+          <li>
+            <a class="social-pill" href="air-purifier-monitor.html"
+              >Related: Air Purifier Monitor</a
+            >
+          </li>
+          <li>
+            <a
+              class="social-pill"
+              href="https://github.com/leonjorge010/Air-Purifier-Monitor-Project"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub (firmware)</a
+            >
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+  </body>
+</html>
