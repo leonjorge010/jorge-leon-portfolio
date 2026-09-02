@@ -2,159 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jorge Leon</title>
     <meta
-      name="description"
-      content="Air Purifier Monitor — an Arduino-based air quality monitor and purifier by Jorge Leon."
+      http-equiv="refresh"
+      content="0; url=air-quality-monitor-purifier.html"
     />
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="canonical" href="air-quality-monitor-purifier.html" />
+    <title>Jorge Leon</title>
+    <script>
+      location.replace("air-quality-monitor-purifier.html");
+    </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header">
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-logo" href="../index.html" aria-label="Home">
-          <span class="logo-mark" aria-hidden="true"></span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../photos.html">Photos</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main id="main" class="page page--project">
-      <p class="project-back">
-        <a class="text-link" href="../index.html#creating-label"
-          >← Back to Creating</a
-        >
-      </p>
-
-      <header class="project-header">
-        <h1 class="project-title">Air Purifier Monitor</h1>
-      </header>
-
-      <section class="section" aria-labelledby="overview-label">
-        <p id="overview-label" class="section-label">Overview</p>
-        <div class="project-prose">
-          <p>
-            A DIY air quality monitor and purifier built on Arduino — sensors, a
-            round touchscreen UI, and automatic fan control when air quality
-            degrades.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="problem-label">
-        <p id="problem-label" class="section-label">The problem</p>
-        <div class="project-prose">
-          <p>
-            Indoor air quality can change quickly, but most consumer setups
-            either measure or purify — not both in a closed loop. I wanted a
-            compact system that could read the air in real time, show clear
-            feedback on a display, and respond automatically when particulate
-            levels rise.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="built-label">
-        <p id="built-label" class="section-label">What I built</p>
-        <div class="project-prose">
-          <p>
-            The system reads particulate and environmental data, displays it on
-            a round GC9A01A touchscreen, and drives a fan that ramps up when
-            measured air quality gets worse. A PMS5003 handles PM2.5 readings,
-            with temperature and humidity from a DHT22 (and related sensors in
-            the companion PCB build).
-          </p>
-          <p>
-            Firmware coordinates multiple communication buses on the Arduino —
-            SPI, I2C, and UART — so the display, sensors, and control logic can
-            run together as one sealed unit rather than a loose bench
-            prototype.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="challenges-label">
-        <p id="challenges-label" class="section-label">Challenges</p>
-        <div class="project-prose">
-          <p>
-            Fitting sensor reads, UI updates, and fan control into a responsive
-            loop without starving any peripheral took careful timing. Power was
-            another constraint: the display, sensors, and logic drew more than a
-            typical Uno onboard regulator could sustain when everything ran
-            together, which pushed the design toward a custom shield and a
-            dedicated buck converter path in the PCB version of the project.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="state-label">
-        <p id="state-label" class="section-label">Current state</p>
-        <div class="project-prose">
-          <p>
-            The monitor runs as a complete embedded product: live air quality on
-            the touchscreen, automatic purification response, and a codebase
-            published on GitHub. It also became the platform for a custom PCB
-            shield so the build could move from jumper wires into a clean,
-            enclosure-ready assembly.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="gallery-label">
-        <p id="gallery-label" class="section-label">Photos</p>
-        <div class="project-gallery">
-          <div class="project-gallery-slot">
-            <span>Assembled unit / enclosure</span>
-          </div>
-          <div class="project-gallery-slot">
-            <span>Touchscreen UI</span>
-          </div>
-          <div class="project-gallery-slot">
-            <span>Bench prototype</span>
-          </div>
-        </div>
-        <p class="hero-bio project-gallery-note">
-          Drop images into
-          <code>assets/projects/air-purifier-monitor/</code> and replace these
-          slots when you’re ready.
-        </p>
-      </section>
-
-      <section class="section" aria-labelledby="links-label">
-        <p id="links-label" class="section-label">Links</p>
-        <ul class="social-list">
-          <li>
-            <a
-              class="social-pill"
-              href="https://github.com/leonjorge010/Air-Purifier-Monitor-Project"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub repo</a
-            >
-          </li>
-          <li>
-            <a class="social-pill" href="air-quality-monitor-pcb.html"
-              >Related: PCB shield</a
-            >
-          </li>
-        </ul>
-      </section>
-
-    </main>
-
-    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+    <p>
+      <a href="air-quality-monitor-purifier.html"
+        >This project is now Air Quality Monitor &amp; Purifier.</a
+      >
+    </p>
   </body>
 </html>

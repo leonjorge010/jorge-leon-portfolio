@@ -1,38 +1,102 @@
 [
   {
-    "src": "assets/photos/placeholder-1.svg",
-    "alt": "Travel photo placeholder"
+    "src": "assets/photos/zion-01.jpg",
+    "alt": "Hiker on a chained sandstone trail along a steep canyon wall"
   },
   {
-    "src": "assets/photos/placeholder-2.svg",
-    "alt": "Project photo placeholder"
+    "src": "assets/photos/zion-02.jpg",
+    "alt": "Hiker smiling on a chained cliffside trail in Zion Canyon"
   },
   {
-    "src": "assets/photos/placeholder-3.svg",
-    "alt": "Travel photo placeholder"
+    "src": "assets/photos/zion-03.jpg",
+    "alt": "Jorge on a canyon overlook with red cliffs behind him"
   },
   {
-    "src": "assets/photos/placeholder-4.svg",
-    "alt": "Project photo placeholder"
+    "src": "assets/photos/zion-04.jpg",
+    "alt": "Jorge and a hiking partner smiling with Zion Canyon behind them"
   },
   {
-    "src": "assets/photos/placeholder-5.svg",
-    "alt": "Travel photo placeholder"
+    "src": "assets/photos/zion-05.jpg",
+    "alt": "Wide view of Zion Canyon with sunlit cliffs and a green valley"
   },
   {
-    "src": "assets/photos/placeholder-6.svg",
-    "alt": "Project photo placeholder"
+    "src": "assets/photos/zion-06.jpg",
+    "alt": "Creek winding through trees at the base of red canyon walls"
   },
   {
-    "src": "assets/photos/placeholder-7.svg",
-    "alt": "Travel photo placeholder"
+    "src": "assets/photos/zion-07.jpg",
+    "alt": "Jorge at a campsite with a tent under red rock cliffs"
   },
   {
-    "src": "assets/photos/placeholder-8.svg",
-    "alt": "Project photo placeholder"
+    "src": "assets/photos/zion-08.jpg",
+    "alt": "Jorge hiking a sandstone trail with canyon views beyond"
   },
   {
-    "src": "assets/photos/placeholder-9.svg",
-    "alt": "Travel photo placeholder"
+    "src": "assets/photos/zion-09.jpg",
+    "alt": "Jorge standing at a high overlook above Zion Canyon"
+  },
+  {
+    "src": "assets/photos/zion-10.jpg",
+    "alt": "Hiker overlooking a creek and canyon walls from a footbridge"
+  },
+  {
+    "src": "assets/photos/zion-11.jpg",
+    "alt": "Jorge smiling at a canyon overlook under a clear blue sky"
+  },
+  {
+    "src": "assets/photos/zion-12.jpg",
+    "alt": "Hiker posing on a sandstone overlook with canyon cliffs behind"
+  },
+  {
+    "src": "assets/photos/zion-13.jpg",
+    "alt": "Trail along the canyon floor with red cliffs and riverside greenery"
+  },
+  {
+    "src": "assets/photos/japan-01.jpg",
+    "alt": "Traditional tiled rooftops along a hillside street in Japan at dusk"
+  },
+  {
+    "src": "assets/photos/japan-02.jpg",
+    "alt": "Friends outside a Lawson convenience store at night in Japan"
+  },
+  {
+    "src": "assets/photos/japan-03.jpg",
+    "alt": "Jorge smiling in front of a red pagoda overlooking a Japanese city"
+  },
+  {
+    "src": "assets/photos/japan-04.jpg",
+    "alt": "Crowds at a large red temple gate with lanterns in Japan"
+  },
+  {
+    "src": "assets/photos/japan-05.jpg",
+    "alt": "Jorge and a friend in front of stacked sake barrels in Japan"
+  },
+  {
+    "src": "assets/photos/japan-06.jpg",
+    "alt": "Busy Shibuya crossing with neon billboards and crowds in Tokyo"
+  },
+  {
+    "src": "assets/photos/japan-07.jpg",
+    "alt": "Friend posing beside a Kirin vending machine on a street in Japan"
+  },
+  {
+    "src": "assets/photos/japan-08.jpg",
+    "alt": "Crowded shopping street lined with traditional buildings in Japan"
+  },
+  {
+    "src": "assets/photos/japan-09.jpg",
+    "alt": "Temple stairs with a Japanese flag and red pagoda beyond"
+  },
+  {
+    "src": "assets/photos/japan-10.jpg",
+    "alt": "Quiet paved street with bare trees and a small shrine gate in Japan"
+  },
+  {
+    "src": "assets/photos/japan-11.jpg",
+    "alt": "Looking up at Tokyo Skytree from a walkway under clear blue sky"
+  },
+  {
+    "src": "assets/photos/japan-12.jpg",
+    "alt": "Narrow Tokyo side street with bikes, signs, and apartment buildings"
   }
 ]

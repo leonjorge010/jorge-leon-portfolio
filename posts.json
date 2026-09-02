@@ -2,13 +2,8 @@
   {
     "title": "Building Totem-Air",
     "teaser": "A custom drone Remote ID monitoring system — capturing broadcasts, decoding them, and showing flights on a live operations dashboard.",
-    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7492672684862894080/",
-    "image": "assets/posts/totem-air.svg"
-  },
-  {
-    "title": "Example post title",
-    "teaser": "Copy this block in posts.json, add an image under assets/posts/, then update title, teaser, url, and image.",
-    "url": "#",
-    "image": "assets/posts/example.svg"
+    "url": "blog/building-totem-air.html",
+    "image": "assets/posts/totem-air.svg",
+    "date": "2025-06-15"
   }
 ]

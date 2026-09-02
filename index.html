@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -28,6 +28,7 @@
         <ul class="nav-links">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="photos.html">Photos</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
         </ul>
       </nav>
     </header>
@@ -43,14 +44,14 @@
         >
           <img
             class="avatar"
-            src="assets/avatar.jpg"
+            src="assets/photos/zion-09.jpg"
             alt="Jorge Leon"
             width="112"
             height="112"
           />
         </button>
         <h1 class="hero-title">
-          I'm Jorge Leon — an electrical and computer engineering student.
+          I'm Jorge — an electrical and computer engineering student.
         </h1>
         <p class="hero-bio">
           I'm an electrical and computer engineering student at California
@@ -58,10 +59,73 @@
           currently looking for internships where I can build real
           hardware–software products and grow as an engineer.
         </p>
-        <!-- Drop your PDF at assets/resume.pdf to activate this button -->
-        <p class="hero-actions">
-          <a class="resume-button" href="assets/resume.pdf">View resume</a>
-        </p>
+        <div class="hero-actions" id="contact">
+          <a class="resume-button" href="assets/Jorge%20Leon%20Resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
+          <a
+            class="social-pill"
+            href="https://github.com/leonjorge010"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg
+              class="social-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a
+            class="social-pill"
+            href="https://www.linkedin.com/in/jorge-leon-duran/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg
+              class="social-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M14.82 0H1.18A1.18 1.18 0 0 0 0 1.18v13.64A1.18 1.18 0 0 0 1.18 16h13.64A1.18 1.18 0 0 0 16 14.82V1.18A1.18 1.18 0 0 0 14.82 0M4.74 13.63H2.37V6h2.37zm-1.18-8.66a1.37 1.37 0 1 1 1.37-1.37 1.37 1.37 0 0 1-1.37 1.37m10.07 8.66h-2.37V9.92c0-.88-.02-2.02-1.23-2.02s-1.42.96-1.42 1.95v3.78H6.24V6h2.27v1.04h.03a2.49 2.49 0 0 1 2.24-1.23c2.4 0 2.84 1.58 2.84 3.63z"
+              />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            class="social-pill"
+            href="mailto:leonjorge010@gmail.com"
+            aria-label="Email"
+          >
+            <svg
+              class="social-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M1.75 2A1.75 1.75 0 0 0 0 3.75v8.5C0 13.22.78 14 1.75 14h12.5c.97 0 1.75-.78 1.75-1.75v-8.5A1.75 1.75 0 0 0 14.25 2zm.22 1.5h12.06L8 7.81zM14.5 5.06V12.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25V5.06L7.5 9.19a.75.75 0 0 0 .94 0z"
+              />
+            </svg>
+            <span>Email</span>
+          </a>
+        </div>
       </section>
 
       <section class="section" aria-labelledby="creating-label">
@@ -80,26 +144,15 @@
             </a>
           </li>
           <li>
-            <a class="link-item" href="projects/air-purifier-monitor.html">
+            <a class="link-item" href="projects/air-quality-monitor-purifier.html">
               <span class="link-title"
-                >Air Purifier Monitor <span aria-hidden="true">→</span></span
+                >Air Quality Monitor &amp; Purifier
+                <span aria-hidden="true">→</span></span
               >
               <span class="link-desc"
-                >DIY air purifier and air quality monitor on Arduino with a
-                round touchscreen, PM2.5 and temperature/humidity sensors, and
-                automatic fan speed control.</span
-              >
-            </a>
-          </li>
-          <li>
-            <a class="link-item" href="projects/air-quality-monitor-pcb.html">
-              <span class="link-title"
-                >Air Quality Monitor PCB <span aria-hidden="true">→</span></span
-              >
-              <span class="link-desc"
-                >Custom Arduino Uno shield for an air quality monitor and
-                purifier — sensors, touchscreen, buck converter, and MOSFET fan
-                driver on a compact through-hole board.</span
+                >DIY air quality monitor and purifier on Arduino — round
+                touchscreen, PM2.5 and environmental sensors, automatic fan
+                control, and a custom Uno shield.</span
               >
             </a>
           </li>
@@ -112,7 +165,8 @@
           <li>
             <div class="link-item link-item--static">
               <span class="link-title"
-                >Software Engineering Intern - Ontrack Technology Group</span
+                >Software Engineering Intern
+                <span class="link-org">- Ontrack Technology Group</span></span
               >
               <span class="link-desc"
                 >May–Aug 2025 — Real-time operations dispatch platform for
@@ -124,7 +178,10 @@
           <li>
             <div class="link-item link-item--static">
               <span class="link-title"
-                >Electronics Subsystem - CalBaptist Racing (Formula SAE EV)</span
+                >Electronics Subsystem
+                <span class="link-org"
+                  >- CalBaptist Racing (Formula SAE EV)</span
+                ></span
               >
               <span class="link-desc"
                 >Sep 2023–May 2024 — PCB design in Altium, wiring harnesses, and
@@ -134,7 +191,10 @@
           </li>
           <li>
             <div class="link-item link-item--static">
-              <span class="link-title">Logistics Analyst - FedEx Freight</span>
+              <span class="link-title"
+                >Logistics Analyst
+                <span class="link-org">- FedEx Freight</span></span
+              >
               <span class="link-desc"
                 >Feb 2025–Present — Analyze transportation data and logistics
                 metrics to improve freight routing and find cost-reduction
@@ -151,12 +211,14 @@
           <li>
             <div class="link-item link-item--static">
               <span class="link-title"
-                >B.S. Electrical and Computer Engineering - California Baptist
-                University</span
+                >B.S. Electrical and Computer Engineering
+                <span class="link-org"
+                  >- California Baptist University</span
+                ></span
               >
               <span class="link-desc"
                 >Software Engineering minor - ABET accredited - Expected May
-                2027 - Riverside, CA</span
+                2027</span
               >
             </div>
           </li>
@@ -164,10 +226,11 @@
       </section>
 
       <!--
-        Posts are loaded from posts.json.
+        Posts are loaded from posts.json (newest first).
         To add a post:
-          1. Put an image in assets/posts/ (jpg, png, or svg)
-          2. Add a new object at the top of posts.json with title, teaser, url, image
+          1. Create an HTML page in blog/ (copy blog/building-totem-air.html)
+          2. Put a thumbnail in assets/posts/
+          3. Add an object at the top of posts.json with title, teaser, url, image, date
       -->
       <section class="section" id="posts" aria-labelledby="posts-label">
         <p id="posts-label" class="section-label">Posts</p>
@@ -176,38 +239,6 @@
         </ul>
       </section>
 
-      <footer class="site-footer" id="contact">
-        <ul class="social-list">
-          <li>
-            <a
-              class="social-pill"
-              href="https://github.com/leonjorge010"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              class="social-pill"
-              href="https://www.linkedin.com/in/jorge-leon-duran/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a
-              class="social-pill"
-              href="mailto:leonjorge010@gmail.com"
-              aria-label="Email"
-              >Email</a
-            >
-          </li>
-        </ul>
-      </footer>
     </main>
 
     <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
@@ -218,7 +249,7 @@
       </button>
       <img
         class="lightbox-image"
-        src="assets/avatar.jpg"
+        src="assets/photos/zion-09.jpg"
         alt="Jorge Leon"
         width="720"
         height="720"
@@ -261,7 +292,13 @@
             return;
           }
 
-          for (const post of posts) {
+          const sorted = [...posts]
+            .sort((a, b) =>
+              String(b.date || "").localeCompare(String(a.date || ""))
+            )
+            .slice(0, 3);
+
+          for (const post of sorted) {
             const item = document.createElement("li");
             const link = document.createElement("a");
             link.className = "post-item";

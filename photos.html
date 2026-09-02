@@ -28,13 +28,14 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="photos.html" aria-current="page">Photos</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
         </ul>
       </nav>
     </header>
 
     <main id="main" class="page page--photos">
       <section class="photos-intro">
-        <h1 class="hero-bio photos-heading">Personal photos</h1>
+        <h1 class="hero-title photos-heading">Personal photos</h1>
       </section>
 
       <!--
@@ -46,42 +47,11 @@
       <div class="photo-grid" id="photo-grid" aria-label="Photo gallery">
         <p class="muted">Loading photos…</p>
       </div>
-
     </main>
 
     <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
 
-    <dialog class="lightbox" id="photo-lightbox" aria-label="Enlarged photo">
-      <button type="button" class="lightbox-close" aria-label="Close photo">
-        <span aria-hidden="true">×</span>
-      </button>
-      <img
-        class="lightbox-image lightbox-image--contain"
-        src=""
-        alt=""
-        width="1200"
-        height="1200"
-      />
-    </dialog>
-
     <script>
-      const lightbox = document.getElementById("photo-lightbox");
-      const lightboxImage = lightbox?.querySelector(".lightbox-image");
-      const closeButton = lightbox?.querySelector(".lightbox-close");
-
-      closeButton?.addEventListener("click", () => lightbox.close());
-
-      lightbox?.addEventListener("click", (event) => {
-        if (event.target === lightbox) lightbox.close();
-      });
-
-      function openPhoto(src, alt) {
-        if (!lightbox || !lightboxImage) return;
-        lightboxImage.src = src;
-        lightboxImage.alt = alt || "";
-        lightbox.showModal();
-      }
-
       async function renderPhotos() {
         const grid = document.getElementById("photo-grid");
         if (!grid) return;
@@ -99,24 +69,16 @@
           }
 
           for (const photo of photos) {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.className = "photo-cell";
-            button.setAttribute(
-              "aria-label",
-              `View larger: ${photo.alt || "photo"}`
-            );
+            const cell = document.createElement("div");
+            cell.className = "photo-cell";
 
             const image = document.createElement("img");
             image.src = photo.src;
             image.alt = photo.alt || "";
             image.loading = "lazy";
 
-            button.append(image);
-            button.addEventListener("click", () =>
-              openPhoto(photo.src, photo.alt)
-            );
-            grid.append(button);
+            cell.append(image);
+            grid.append(cell);
           }
         } catch (error) {
           grid.innerHTML =
