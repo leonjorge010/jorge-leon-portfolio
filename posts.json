@@ -1,5 +1,12 @@
 [
   {
+    "title": "Moving our capstone to Docker",
+    "teaser": "A proposal to give the team one consistent environment for our embedded systems capstone, instead of developing on mismatched machines or the Jetson itself.",
+    "url": "blog/moving-capstone-to-docker.html",
+    "image": "assets/posts/docker-capstone.svg",
+    "date": "2026-09-10"
+  },
+  {
     "title": "Building Totem-Air",
     "teaser": "A custom drone Remote ID monitoring system — capturing broadcasts, decoding them, and showing flights on a live operations dashboard.",
     "url": "blog/building-totem-air.html",
