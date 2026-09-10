@@ -324,7 +324,7 @@
             copy.className = "post-copy";
             copy.innerHTML = `
               <span class="link-title">${escapeHtml(post.title || "Untitled")} <span aria-hidden="true">→</span></span>
-              <span class="link-desc">${escapeHtml(post.teaser || "")}</span>
+              ${post.teaser ? `<span class="link-desc">${escapeHtml(post.teaser)}</span>` : ""}
             `;
 
             link.append(image, copy);

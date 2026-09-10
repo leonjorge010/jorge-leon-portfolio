@@ -104,7 +104,7 @@
             copy.innerHTML = `
               <span class="link-title">${escapeHtml(post.title || "Untitled")} <span aria-hidden="true">→</span></span>
               ${dateLabel ? `<span class="post-date">${escapeHtml(dateLabel)}</span>` : ""}
-              <span class="link-desc">${escapeHtml(post.teaser || "")}</span>
+              ${post.teaser ? `<span class="link-desc">${escapeHtml(post.teaser)}</span>` : ""}
             `;
 
             link.append(image, copy);
