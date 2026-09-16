@@ -607,37 +607,65 @@ a.post-item:hover .link-title {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.15rem;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 1.3rem) / 3);
+  gap: 0.65rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  padding-bottom: 0.2rem;
 }
 
 .project-gallery figure {
   margin: 0;
+  min-width: 0;
+  scroll-snap-align: start;
 }
 
 .project-gallery-open {
   display: block;
   width: 100%;
+  aspect-ratio: 4 / 3;
   padding: 0;
   border: none;
-  background: transparent;
+  overflow: hidden;
+  background: #111;
   cursor: zoom-in;
   border-radius: var(--radius-lg);
 }
 
 .project-gallery img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  border-radius: var(--radius-lg);
-  background: #111;
+  object-fit: cover;
+}
+
+.project-gallery-photo--rooftop {
+  object-position: center 72%;
+}
+
+.project-gallery-photo--map {
+  object-position: center 42%;
+}
+
+.project-gallery-photo--history {
+  object-position: center 48%;
 }
 
 .project-gallery figcaption {
   margin: 0.45rem 0 0;
   font-size: 14px;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.4;
+}
+
+@media (max-width: 560px) {
+  .project-gallery {
+    grid-auto-columns: min(80%, 16.5rem);
+    scroll-padding-inline: 0;
+  }
 }
 
 .project-gallery-slot {
