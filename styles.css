@@ -608,7 +608,7 @@ a.post-item:hover .link-title {
 .project-gallery {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 1.3rem) / 3);
+  grid-auto-columns: calc((100% - 1.3rem) / 2.55);
   gap: 0.65rem;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -663,7 +663,7 @@ a.post-item:hover .link-title {
 
 @media (max-width: 560px) {
   .project-gallery {
-    grid-auto-columns: min(80%, 16.5rem);
+    grid-auto-columns: min(88%, 19rem);
     scroll-padding-inline: 0;
   }
 }
