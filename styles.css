@@ -607,8 +607,37 @@ a.post-item:hover .link-title {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.65rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.15rem;
+}
+
+.project-gallery figure {
+  margin: 0;
+}
+
+.project-gallery-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: var(--radius-lg);
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  background: #111;
+}
+
+.project-gallery figcaption {
+  margin: 0.45rem 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .project-gallery-slot {
@@ -634,10 +663,18 @@ a.post-item:hover .link-title {
   font-size: 14px;
 }
 
-@media (max-width: 560px) {
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
+.lightbox--wide {
+  width: min(96vw, 1080px);
+  max-height: 92vh;
+}
+
+.lightbox--wide .lightbox-image {
+  width: 100%;
+  height: auto;
+  max-height: 92vh;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* Photos page */

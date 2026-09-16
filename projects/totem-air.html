@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles.css?v=4" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -110,26 +110,56 @@
         </div>
       </section>
 
-      <!-- Hidden for now — restore when adding real project photos:
       <section class="section" aria-labelledby="gallery-label">
         <p id="gallery-label" class="section-label">Photos</p>
         <div class="project-gallery">
-          <div class="project-gallery-slot">
-            <span>Dashboard / map screenshot</span>
-          </div>
-          <div class="project-gallery-slot">
-            <span>Flight history replay</span>
-          </div>
-          <div class="project-gallery-slot">
-            <span>Receiver on site</span>
-          </div>
+          <figure>
+            <button
+              type="button"
+              class="project-gallery-open"
+              aria-label="View larger photo of the Totem-Air receiver on site"
+            >
+              <img
+                src="../assets/projects/totem-air/rooftop-receiver.jpg"
+                alt="Totem-Air receiver case, antenna, and radio on a rooftop overlooking a festival crowd and harbor"
+                width="768"
+                height="1024"
+              />
+            </button>
+            <figcaption>Receiver on site</figcaption>
+          </figure>
+          <figure>
+            <button
+              type="button"
+              class="project-gallery-open"
+              aria-label="View larger screenshot of the Totem-Air live map"
+            >
+              <img
+                src="../assets/projects/totem-air/live-map.jpg"
+                alt="Totem-Air live map showing an authorized production drone track around a venue"
+                width="800"
+                height="472"
+              />
+            </button>
+            <figcaption>Live map during a show</figcaption>
+          </figure>
+          <figure>
+            <button
+              type="button"
+              class="project-gallery-open"
+              aria-label="View larger screenshot of Totem-Air flight history"
+            >
+              <img
+                src="../assets/projects/totem-air/flight-history.jpg"
+                alt="Totem-Air flight history replay of an unauthorized DJI Mini 5 Pro, with map track and altitude chart"
+                width="1024"
+                height="548"
+              />
+            </button>
+            <figcaption>Flight history replay</figcaption>
+          </figure>
         </div>
-        <p class="hero-bio project-gallery-note">
-          Drop images into <code>assets/projects/totem-air/</code> and replace
-          these slots when you’re ready.
-        </p>
       </section>
-      -->
 
       <section class="section" aria-labelledby="links-label">
         <p id="links-label" class="section-label">Links</p>
@@ -154,5 +184,42 @@
     </main>
 
     <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+
+    <dialog class="lightbox lightbox--wide" id="project-lightbox" aria-label="Project photo">
+      <button type="button" class="lightbox-close" aria-label="Close photo">
+        <span aria-hidden="true">×</span>
+      </button>
+      <img class="lightbox-image lightbox-image--contain" id="project-lightbox-image" alt="" />
+    </dialog>
+
+    <script>
+      const lightbox = document.getElementById("project-lightbox");
+      const lightboxImage = document.getElementById("project-lightbox-image");
+      const closeButton = lightbox?.querySelector(".lightbox-close");
+
+      document.querySelectorAll(".project-gallery-open").forEach((button) => {
+        button.addEventListener("click", () => {
+          const image = button.querySelector("img");
+          if (!lightbox || !lightboxImage || !image) return;
+          lightboxImage.src = image.currentSrc || image.src;
+          lightboxImage.alt = image.alt || "";
+          lightbox.showModal();
+        });
+      });
+
+      closeButton?.addEventListener("click", () => {
+        lightbox.close();
+      });
+
+      lightbox?.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          lightbox.close();
+        }
+      });
+
+      lightbox?.addEventListener("close", () => {
+        if (lightboxImage) lightboxImage.src = "";
+      });
+    </script>
   </body>
 </html>
