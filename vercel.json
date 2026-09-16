@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/moving-capstone-to-docker",
+      "destination": "/blog/moving-capstone-to-docker",
+      "permanent": true
+    }
+  ]
 }

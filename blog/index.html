@@ -39,7 +39,7 @@
         To add a post:
           1. Create an HTML page in blog/ (copy building-totem-air.html)
           2. Put a thumbnail in assets/posts/
-          3. Add an object at the top of posts.json with title, teaser, url, image, date
+          3. Add an object at the top of posts.json with title, teaser, url (e.g. /blog/my-post), image, date
           4. If it belongs to a project, set "project" to that page slug (e.g. autonomous-navigating-robot)
       -->
       <ul class="post-list" id="post-list">
@@ -76,13 +76,7 @@
             const link = document.createElement("a");
             link.className = "post-item";
 
-            let href = post.url || "#";
-            if (href.startsWith("blog/")) {
-              href = href.slice("blog/".length);
-            } else if (href.startsWith("/blog/")) {
-              href = href.slice("/blog/".length);
-            }
-            link.href = href;
+            link.href = postHref(post.url);
 
             if (post.url && post.url.startsWith("http")) {
               link.target = "_blank";
@@ -117,6 +111,12 @@
             '<li class="post-list-status muted">Could not load posts. Check posts.json.</li>';
           console.error(error);
         }
+      }
+
+      function postHref(url) {
+        if (!url) return "#";
+        if (/^https?:\/\//i.test(url)) return url;
+        return url.startsWith("/") ? url : `/${url}`;
       }
 
       function formatDate(value) {
