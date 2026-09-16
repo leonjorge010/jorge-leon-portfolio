@@ -6,7 +6,7 @@
     <title>Jorge Leon</title>
     <meta
       name="description"
-      content="Blog posts by Jorge Leon on embedded systems, software, and projects."
+      content="Autonomous Navigating Robot — a CBU embedded systems capstone by Jorge Leon."
     />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,30 +28,75 @@
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="/photos">Photos</a></li>
-          <li><a href="/blog" aria-current="page">Blog</a></li>
+          <li><a href="/blog">Blog</a></li>
         </ul>
       </nav>
     </header>
 
-    <main id="main" class="page page--blog">
+    <main id="main" class="page page--project">
+      <header class="project-header">
+        <h1 class="project-title">Autonomous Navigating Robot</h1>
+        <p class="hero-bio">CBU embedded systems capstone — in progress.</p>
+      </header>
+
+      <section class="section" aria-labelledby="overview-label">
+        <p id="overview-label" class="section-label">Overview</p>
+        <div class="project-prose">
+          <p>
+            A team capstone to build a robot that can plan and follow a path on
+            its own. Compute lives on an NVIDIA Jetson. I'll keep this page
+            current as hardware and navigation take shape.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="goal-label">
+        <p id="goal-label" class="section-label">The goal</p>
+        <div class="project-prose">
+          <p>
+            Get a mobile robot from A to B without a driver in the loop — sense
+            the space, decide a path, and execute it reliably enough for a
+            demo. The stack will span hardware, onboard software, and the
+            development environment the team actually uses day to day.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="state-label">
+        <p id="state-label" class="section-label">Current state</p>
+        <div class="project-prose">
+          <p>
+            The project is starting. The first write-up is a proposal to move
+            our Jetson workflow into Docker so everyone shares one environment
+            instead of developing on mismatched machines or on the board
+            itself. Hardware, navigation, and photos will land here as they
+            exist — not before.
+          </p>
+        </div>
+      </section>
+
       <!--
-        Posts are loaded from ../posts.json.
-        To add a post:
-          1. Create an HTML page in blog/ (copy building-totem-air.html)
-          2. Put a thumbnail in assets/posts/
-          3. Add an object at the top of posts.json with title, teaser, url, image, date
-          4. If it belongs to a project, set "project" to that page slug (e.g. autonomous-navigating-robot)
+        Related posts load from ../posts.json where project is
+        "autonomous-navigating-robot". Add a post the usual way, and include
+        that project field so it shows up here automatically.
       -->
-      <ul class="post-list" id="post-list">
-        <li class="post-list-status muted">Loading posts…</li>
-      </ul>
+      <section class="section" aria-labelledby="writing-label">
+        <p id="writing-label" class="section-label">Writing</p>
+        <ul class="post-list" id="project-post-list">
+          <li class="post-list-status muted">Loading posts…</li>
+        </ul>
+      </section>
+
+      <p class="project-back project-back--bottom">
+        <a class="text-link" href="/#creating-label">← Back to Creating</a>
+      </p>
     </main>
 
     <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
 
     <script>
-      async function renderPosts() {
-        const list = document.getElementById("post-list");
+      async function renderProjectPosts() {
+        const list = document.getElementById("project-post-list");
         if (!list) return;
 
         try {
@@ -59,28 +104,28 @@
           if (!response.ok) throw new Error("Could not load posts.json");
 
           const posts = await response.json();
+          const related = (Array.isArray(posts) ? posts : [])
+            .filter((post) => post.project === "autonomous-navigating-robot")
+            .sort((a, b) =>
+              String(b.date || "").localeCompare(String(a.date || ""))
+            );
+
           list.innerHTML = "";
 
-          if (!Array.isArray(posts) || posts.length === 0) {
+          if (related.length === 0) {
             list.innerHTML =
-              '<li class="post-list-status muted">No posts yet.</li>';
+              '<li class="post-list-status muted">No write-ups yet.</li>';
             return;
           }
 
-          const sorted = [...posts].sort((a, b) =>
-            String(b.date || "").localeCompare(String(a.date || ""))
-          );
-
-          for (const post of sorted) {
+          for (const post of related) {
             const item = document.createElement("li");
             const link = document.createElement("a");
             link.className = "post-item";
 
             let href = post.url || "#";
             if (href.startsWith("blog/")) {
-              href = href.slice("blog/".length);
-            } else if (href.startsWith("/blog/")) {
-              href = href.slice("/blog/".length);
+              href = `/${href}`;
             }
             link.href = href;
 
@@ -138,7 +183,7 @@
           .replaceAll('"', "&quot;");
       }
 
-      renderPosts();
+      renderProjectPosts();
     </script>
   </body>
 </html>
