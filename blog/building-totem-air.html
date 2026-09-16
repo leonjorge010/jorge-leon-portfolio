@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Building Totem-Air — a custom drone Remote ID monitoring system by Jorge Leon."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="/" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/photos">Photos</a></li>
+          <li><a href="/blog" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page page--blog">
+      <article>
+        <header class="project-header">
+          <p class="post-date">June 15, 2025</p>
+          <h1 class="project-title">Building Totem-Air</h1>
+          <p class="hero-bio">
+            A custom drone Remote ID monitoring system — capturing broadcasts,
+            decoding them, and showing flights on a live operations dashboard.
+          </p>
+        </header>
+
+        <div class="project-prose blog-prose">
+          <p>
+            Drones are required to broadcast identification and position data,
+            but event and festival operators still need a practical way to see
+            who’s flying, where they are, and whether a flight is authorized —
+            especially when multiple production drones and unknown aircraft
+            share the same airspace.
+          </p>
+          <p>
+            Totem-Air is the system I built for that problem. It passively
+            captures those transmissions, decodes them using parsers I wrote for
+            both the open Remote ID standard and DJI’s proprietary format, tags
+            each message with position and time, and shows the results in a live
+            dashboard built for operations teams.
+          </p>
+          <p>
+            The work spanned the full stack: radio behavior and antenna
+            placement at the bottom, signal decoding and protocol work in the
+            middle, and backend plus interface design at the top. The UI
+            includes a live map for show operations, a registry of previously
+            identified drones, and a flight history page that can replay a full
+            flight and its data.
+          </p>
+          <p>
+            Reliable capture in a noisy RF environment meant careful antenna
+            placement and receiver design. Supporting both the open standard and
+            DJI’s format required separate parsers that still fed one consistent
+            data model. The dashboard had to stay usable for ops teams in the
+            field — live map, history replay, and drone registry — without
+            becoming cluttered during a busy show.
+          </p>
+          <p>
+            During testing, Totem-Air was evaluated alongside systems used by
+            other agencies and recognized for stronger capability at lower cost.
+            It has run at about five shows so far, flagging dozens of
+            unauthorized flights while helping keep authorized production drones
+            deconflicted. Development continues toward fuller integration into
+            festival operations.
+          </p>
+        </div>
+
+        <section class="section" aria-labelledby="links-label">
+          <p id="links-label" class="section-label">Links</p>
+          <ul class="social-list">
+            <li>
+              <a class="social-pill" href="/projects/totem-air"
+                >Project page</a
+              >
+            </li>
+            <li>
+              <a
+                class="social-pill"
+                href="https://www.linkedin.com/feed/update/urn:li:activity:7492672684862894080/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn write-up</a
+              >
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <p class="project-back project-back--bottom">
+        <a class="text-link" href="/blog">← Back to Blog</a>
+      </p>
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+  </body>
+</html>

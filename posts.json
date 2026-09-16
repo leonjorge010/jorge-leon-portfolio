@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Moving our capstone to Docker",
+    "teaser": "A proposal to give the team one consistent environment for our embedded systems capstone, instead of developing on mismatched machines or the Jetson itself.",
+    "url": "blog/moving-capstone-to-docker",
+    "image": "assets/posts/docker-capstone.svg",
+    "date": "2026-09-10"
+  }
+]

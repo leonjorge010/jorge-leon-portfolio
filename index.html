@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Jorge Leon — electrical and computer engineering student at California Baptist University, focused on embedded systems and software."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="/" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="/photos">Photos</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page">
+      <section class="hero" id="work">
+        <button
+          type="button"
+          class="avatar-button"
+          aria-haspopup="dialog"
+          aria-controls="avatar-lightbox"
+          aria-label="View larger photo of Jorge Leon"
+        >
+          <img
+            class="avatar"
+            src="assets/photos/zion-09.jpg"
+            alt="Jorge Leon"
+            width="112"
+            height="112"
+          />
+        </button>
+        <h1 class="hero-title">
+          I'm Jorge — an electrical and computer engineering student.
+        </h1>
+        <p class="hero-bio">
+          I'm an electrical and computer engineering student at California
+          Baptist University, focused on embedded systems and software. I'm
+          currently looking for internships where I can build real
+          hardware–software products and grow as an engineer.
+        </p>
+        <div class="hero-actions" id="contact">
+          <!-- Hidden for now — restore when resume is ready:
+          <a class="resume-button" href="assets/Jorge%20Leon%20Resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
+          -->
+          <a
+            class="social-pill"
+            href="https://github.com/leonjorge010"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg
+              class="social-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a
+            class="social-pill"
+            href="https://www.linkedin.com/in/jorge-leon-duran/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg
+              class="social-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M14.82 0H1.18A1.18 1.18 0 0 0 0 1.18v13.64A1.18 1.18 0 0 0 1.18 16h13.64A1.18 1.18 0 0 0 16 14.82V1.18A1.18 1.18 0 0 0 14.82 0M4.74 13.63H2.37V6h2.37zm-1.18-8.66a1.37 1.37 0 1 1 1.37-1.37 1.37 1.37 0 0 1-1.37 1.37m10.07 8.66h-2.37V9.92c0-.88-.02-2.02-1.23-2.02s-1.42.96-1.42 1.95v3.78H6.24V6h2.27v1.04h.03a2.49 2.49 0 0 1 2.24-1.23c2.4 0 2.84 1.58 2.84 3.63z"
+              />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            class="social-pill"
+            href="mailto:leonjorge010@gmail.com"
+            aria-label="Email"
+          >
+            <svg
+              class="social-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M1.75 2A1.75 1.75 0 0 0 0 3.75v8.5C0 13.22.78 14 1.75 14h12.5c.97 0 1.75-.78 1.75-1.75v-8.5A1.75 1.75 0 0 0 14.25 2zm.22 1.5h12.06L8 7.81zM14.5 5.06V12.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25V5.06L7.5 9.19a.75.75 0 0 0 .94 0z"
+              />
+            </svg>
+            <span>Email</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="creating-label">
+        <p id="creating-label" class="section-label">Creating</p>
+        <ul class="link-list">
+          <li>
+            <a class="link-item" href="/projects/totem-air">
+              <span class="link-title"
+                >Totem-Air <span aria-hidden="true">→</span></span
+              >
+              <span class="link-desc"
+                >Custom drone Remote ID monitoring system — passively captures
+                and decodes broadcasts, tags them with position and time, and
+                shows them on a live operations dashboard.</span
+              >
+            </a>
+          </li>
+          <li>
+            <a class="link-item" href="/projects/air-quality-monitor-purifier">
+              <span class="link-title"
+                >Air Quality Monitor &amp; Purifier
+                <span aria-hidden="true">→</span></span
+              >
+              <span class="link-desc"
+                >DIY air quality monitor and purifier on Arduino — round
+                touchscreen, PM2.5 and environmental sensors, automatic fan
+                control, and a custom Uno shield.</span
+              >
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="experience-label">
+        <p id="experience-label" class="section-label">Experience</p>
+        <ul class="link-list">
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >Software Engineering Intern
+                <span class="link-org">- Ontrack Technology Group</span></span
+              >
+              <span class="link-desc"
+                >May–Aug 2025 — Real-time operations dispatch platform for
+                large events; Angular dashboards, PostgreSQL, and WebSockets
+                that helped cut average response times by 21%.</span
+              >
+            </div>
+          </li>
+          <!-- Hidden for now — restore these experience items later:
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >Electronics Subsystem
+                <span class="link-org"
+                  >- CalBaptist Racing (Formula SAE EV)</span
+                ></span
+              >
+              <span class="link-desc"
+                >Sep 2023–May 2024 — PCB design in Altium, wiring harnesses, and
+                vehicle electrical assembly for the Formula SAE EV team.</span
+              >
+            </div>
+          </li>
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >Logistics Analyst
+                <span class="link-org">- FedEx Freight</span></span
+              >
+              <span class="link-desc"
+                >Feb 2025–Present — Analyze transportation data and logistics
+                metrics to improve freight routing and find cost-reduction
+                opportunities.</span
+              >
+            </div>
+          </li>
+          -->
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="education-label">
+        <p id="education-label" class="section-label">Education</p>
+        <ul class="link-list">
+          <li>
+            <div class="link-item link-item--static">
+              <span class="link-title"
+                >B.S. Electrical and Computer Engineering
+                <span class="link-org"
+                  >- California Baptist University</span
+                ></span
+              >
+              <span class="link-desc"
+                >Software Engineering minor - ABET accredited - Expected May
+                2027</span
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!--
+        Posts are loaded from posts.json (newest first).
+        To add a post:
+          1. Create an HTML page in blog/ (copy blog/building-totem-air.html)
+          2. Put a thumbnail in assets/posts/
+          3. Add an object at the top of posts.json with title, teaser, url, image, date
+      -->
+      <section class="section" id="posts" aria-labelledby="posts-label">
+        <p id="posts-label" class="section-label">Posts</p>
+        <ul class="post-list" id="post-list">
+          <li class="post-list-status muted">Loading posts…</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+
+    <dialog class="lightbox" id="avatar-lightbox" aria-label="Photo of Jorge Leon">
+      <button type="button" class="lightbox-close" aria-label="Close photo">
+        <span aria-hidden="true">×</span>
+      </button>
+      <img
+        class="lightbox-image"
+        src="assets/photos/zion-09.jpg"
+        alt="Jorge Leon"
+        width="720"
+        height="720"
+      />
+    </dialog>
+
+    <script>
+      const lightbox = document.getElementById("avatar-lightbox");
+      const openButton = document.querySelector(".avatar-button");
+      const closeButton = lightbox?.querySelector(".lightbox-close");
+
+      openButton?.addEventListener("click", () => {
+        lightbox.showModal();
+      });
+
+      closeButton?.addEventListener("click", () => {
+        lightbox.close();
+      });
+
+      lightbox?.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          lightbox.close();
+        }
+      });
+
+      async function renderPosts() {
+        const list = document.getElementById("post-list");
+        if (!list) return;
+
+        try {
+          const response = await fetch("posts.json", { cache: "no-store" });
+          if (!response.ok) throw new Error("Could not load posts.json");
+
+          const posts = await response.json();
+          list.innerHTML = "";
+
+          if (!Array.isArray(posts) || posts.length === 0) {
+            list.innerHTML =
+              '<li class="post-list-status muted">No posts yet.</li>';
+            return;
+          }
+
+          const sorted = [...posts]
+            .sort((a, b) =>
+              String(b.date || "").localeCompare(String(a.date || ""))
+            )
+            .slice(0, 3);
+
+          for (const post of sorted) {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.className = "post-item";
+            link.href = post.url || "#";
+
+            if (post.url && post.url.startsWith("http")) {
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+            }
+
+            const image = document.createElement("img");
+            image.className = "post-thumb";
+            image.src = post.image || "assets/posts/example.svg";
+            image.alt = "";
+            image.width = 48;
+            image.height = 48;
+
+            const copy = document.createElement("span");
+            copy.className = "post-copy";
+            copy.innerHTML = `
+              <span class="link-title">${escapeHtml(post.title || "Untitled")} <span aria-hidden="true">→</span></span>
+              ${post.teaser ? `<span class="link-desc">${escapeHtml(post.teaser)}</span>` : ""}
+            `;
+
+            link.append(image, copy);
+            item.append(link);
+            list.append(item);
+          }
+        } catch (error) {
+          list.innerHTML =
+            '<li class="post-list-status muted">Could not load posts. Check posts.json.</li>';
+          console.error(error);
+        }
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
+
+      renderPosts();
+    </script>
+  </body>
+</html>

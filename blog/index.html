@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Blog posts by Jorge Leon on embedded systems, software, and projects."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="/" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/photos">Photos</a></li>
+          <li><a href="/blog" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page page--blog">
+      <!--
+        Posts are loaded from ../posts.json.
+        To add a post:
+          1. Create an HTML page in blog/ (copy building-totem-air.html)
+          2. Put a thumbnail in assets/posts/
+          3. Add an object at the top of posts.json with title, teaser, url, image, date
+      -->
+      <ul class="post-list" id="post-list">
+        <li class="post-list-status muted">Loading posts…</li>
+      </ul>
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+
+    <script>
+      async function renderPosts() {
+        const list = document.getElementById("post-list");
+        if (!list) return;
+
+        try {
+          const response = await fetch("../posts.json", { cache: "no-store" });
+          if (!response.ok) throw new Error("Could not load posts.json");
+
+          const posts = await response.json();
+          list.innerHTML = "";
+
+          if (!Array.isArray(posts) || posts.length === 0) {
+            list.innerHTML =
+              '<li class="post-list-status muted">No posts yet.</li>';
+            return;
+          }
+
+          const sorted = [...posts].sort((a, b) =>
+            String(b.date || "").localeCompare(String(a.date || ""))
+          );
+
+          for (const post of sorted) {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.className = "post-item";
+
+            let href = post.url || "#";
+            if (href.startsWith("blog/")) {
+              href = href.slice("blog/".length);
+            } else if (href.startsWith("/blog/")) {
+              href = href.slice("/blog/".length);
+            }
+            link.href = href;
+
+            if (post.url && post.url.startsWith("http")) {
+              link.target = "_blank";
+              link.rel = "noopener noreferrer";
+              link.href = post.url;
+            }
+
+            const image = document.createElement("img");
+            image.className = "post-thumb";
+            image.src = post.image
+              ? `../${post.image}`
+              : "../assets/posts/example.svg";
+            image.alt = "";
+            image.width = 48;
+            image.height = 48;
+
+            const copy = document.createElement("span");
+            copy.className = "post-copy";
+            const dateLabel = formatDate(post.date);
+            copy.innerHTML = `
+              <span class="link-title">${escapeHtml(post.title || "Untitled")} <span aria-hidden="true">→</span></span>
+              ${dateLabel ? `<span class="post-date">${escapeHtml(dateLabel)}</span>` : ""}
+              ${post.teaser ? `<span class="link-desc">${escapeHtml(post.teaser)}</span>` : ""}
+            `;
+
+            link.append(image, copy);
+            item.append(link);
+            list.append(item);
+          }
+        } catch (error) {
+          list.innerHTML =
+            '<li class="post-list-status muted">Could not load posts. Check posts.json.</li>';
+          console.error(error);
+        }
+      }
+
+      function formatDate(value) {
+        if (!value) return "";
+        const date = new Date(`${value}T12:00:00`);
+        if (Number.isNaN(date.getTime())) return value;
+        return date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
+
+      renderPosts();
+    </script>
+  </body>
+</html>

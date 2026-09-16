@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Travel and project photos from Jorge Leon."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="/" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/photos" aria-current="page">Photos</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page page--photos">
+      <section class="photos-intro">
+        <h1 class="hero-title photos-heading">Personal photos</h1>
+      </section>
+
+      <!--
+        Photos are loaded from photos.json.
+        To add a photo:
+          1. Put an image in assets/photos/ (jpg, png, or webp)
+          2. Add a new object in photos.json with src and alt
+      -->
+      <div class="photo-grid" id="photo-grid" aria-label="Photo gallery">
+        <p class="muted">Loading photos…</p>
+      </div>
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+
+    <script>
+      async function renderPhotos() {
+        const grid = document.getElementById("photo-grid");
+        if (!grid) return;
+
+        try {
+          const response = await fetch("photos.json", { cache: "no-store" });
+          if (!response.ok) throw new Error("Could not load photos.json");
+
+          const photos = await response.json();
+          grid.innerHTML = "";
+
+          if (!Array.isArray(photos) || photos.length === 0) {
+            grid.innerHTML = '<p class="muted">No photos yet.</p>';
+            return;
+          }
+
+          for (const photo of photos) {
+            const cell = document.createElement("div");
+            cell.className = "photo-cell";
+
+            const image = document.createElement("img");
+            image.src = photo.src;
+            image.alt = photo.alt || "";
+            image.loading = "lazy";
+
+            cell.append(image);
+            grid.append(cell);
+          }
+        } catch (error) {
+          grid.innerHTML =
+            '<p class="muted">Could not load photos. Check photos.json.</p>';
+          console.error(error);
+        }
+      }
+
+      renderPhotos();
+    </script>
+  </body>
+</html>

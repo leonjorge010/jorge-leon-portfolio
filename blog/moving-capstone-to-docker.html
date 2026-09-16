@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Leon</title>
+    <meta
+      name="description"
+      content="Moving our capstone to Docker — a consistent environment for the embedded systems team, by Jorge Leon."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-logo" href="/" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/photos">Photos</a></li>
+          <li><a href="/blog" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="page page--blog">
+      <article>
+        <header class="project-header">
+          <p class="post-date">September 10, 2026</p>
+          <h1 class="project-title">Moving Our Capstone to Docker</h1>
+        </header>
+
+        <section class="section" aria-labelledby="overview-label">
+          <p id="overview-label" class="section-label">Overview</p>
+          <div class="project-prose">
+            <p>
+              I am suggesting that we move our embedded systems capstone
+              workflow to Docker. This would give the entire team one consistent
+              environment to build and test our system, instead of having
+              everyone work directly on their own machines or on the Jetson
+              itself.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="problem-label">
+          <p id="problem-label" class="section-label">The problem</p>
+          <div class="project-prose">
+            <p>
+              We've been working on the Jetson like a regular computer using a
+              monitor, keyboard, mouse, etc. While that works, it's inefficient
+              and isn't always practical. The Jetson is stored away when we're
+              not actively using it, and we don't want to be tied to campus just
+              to make progress. We could SSH into the Jetson, but we would still
+              need to be on the same LAN unless we set up additional
+              remote-access infrastructure. On top of that, since we're all
+              developing on our own machines, we may run into runtime errors
+              because one teammate's dependency versions, operating system, or
+              hardware setup doesn't match another's. This means that code that
+              works for one person may break for someone else.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="solution-label">
+          <p id="solution-label" class="section-label">The solution</p>
+          <div class="project-prose">
+            <p>
+              Docker would give us a standardized development environment that
+              can run consistently across our different machines. Everyone would
+              build from and work within the same Docker image, which would
+              contain the project's dependencies, libraries, tools, and
+              configuration. This would make our development environment
+              reproducible and significantly reduce differences between
+              teammates' setups. It would also allow us to work on the project
+              from our own computers without needing constant physical access to
+              the Jetson. Docker provides isolation between the project
+              environment and the host machine, making it easier to maintain
+              consistent dependencies and avoid conflicts with other software
+              installed on our computers.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="challenges-label">
+          <p id="challenges-label" class="section-label">Challenges</p>
+          <div class="project-prose">
+            <p>
+              I don't think any of us have used Docker before, so there will be
+              a learning curve to manage. The goal would be to keep that
+              learning curve shallow by having me set up the initial image and
+              workflow so teammates only need to learn a few basic commands to
+              pull, run, and build inside the environment. We'll also need to
+              make sure the containerized environment reflects the Jetson's
+              software and hardware constraints closely enough that development
+              in Docker translates reliably to the actual device.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="state-label">
+          <p id="state-label" class="section-label">Current state</p>
+          <div class="project-prose">
+            <p>
+              There is no adoption yet. This week, I’ll test the Docker-based
+              workflow to see if we can make as much progress working through
+              the containerized environment as we have with our current setup.
+              This should give us a better idea of whether Docker can
+              realistically support our day-to-day development without creating
+              additional obstacles. After testing it, I’ll give another update
+              with the results and any changes we may need to make before
+              adopting it as a team.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="links-label">
+          <p id="links-label" class="section-label">Resources</p>
+          <ul class="social-list">
+            <li>
+              <a
+                class="social-pill"
+                href="https://docs.docker.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Docker documentation</a
+              >
+            </li>
+            <li>
+              <a
+                class="social-pill"
+                href="https://docs.nvidia.com/jetson/orin-nano-devkit/user-guide/latest/setup_docker.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >NVIDIA Jetson Orin Nano — Docker setup</a
+              >
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <p class="project-back project-back--bottom">
+        <a class="text-link" href="/blog">← Back to Blog</a>
+      </p>
+    </main>
+
+    <p class="copyright">© 2026 Jorge Leon. All rights reserved.</p>
+  </body>
+</html>
